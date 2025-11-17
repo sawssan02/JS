@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container.mx-auto.mt-10
+    h1.text-2xl.font-bold.mb-5 Login
+    if error
+      p.text-red-500= error
+    if success_msg
+      p.text-green-500= success_msg
+    form(action="/login" method="POST" class="space-y-4")
+      input(type="text" name="username" placeholder="Username" class="border p-2 w-full")
+      input(type="password" name="password" placeholder="Password" class="border p-2 w-full")
+      button(type="submit" class="bg-blue-500 text-white px-4 py-2") Login
+    p.mt-3
+      a(href="/register" class="text-blue-700") Don't have an account? Register

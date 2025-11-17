@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .container.mx-auto.mt-10
+    h1.text-2xl.font-bold.mb-5 Books
+    p Welcome, #{user.username}!
+    ul
+      each book in books
+        li #{book.title} - #{book.author}
+    a(href="/logout" class="text-red-500 mt-5 inline-block") Logout
